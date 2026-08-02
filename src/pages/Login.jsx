@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { loginUser } from "../services/authService";
-import loginImage from "../assets/Images/WebImages/CategoryImages/KitchenAccessories.png";
+import loginImage from "../assets/Images/WebImages/CategoryImages/kitchenAccessories.png";
 
 const Login = () => {
     const navigate = useNavigate();
