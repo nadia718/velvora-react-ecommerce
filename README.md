@@ -131,7 +131,7 @@ Version Control
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 src
 
@@ -153,7 +153,7 @@ assets
 
 ---
 
-# 🔥 Services
+# Services
 
 ## Product Service
 
@@ -223,7 +223,7 @@ Wishlist
 
 ---
 
-# 🔗 API Endpoints
+# API Endpoints
 
 GET /users
 
@@ -243,7 +243,7 @@ POST /orders
 
 ---
 
-# ⚙ Deployment Journey
+#  Deployment Journey
 
 ## Frontend Deployment
 
@@ -283,7 +283,7 @@ Connected Frontend with Railway API
 
 ---
 
-# 📦 Railway Configuration
+# Railway Configuration
 
 Package.json Script
 
@@ -303,7 +303,7 @@ npm run server
 
 ---
 
-# 🧠 React Concepts Used
+#  React Concepts Used
 
 Functional Components
 
@@ -331,7 +331,7 @@ REST API
 
 ---
 
-# 🎨 UI Features
+# UI Features
 
 Luxury Home Decor Theme
 
@@ -355,7 +355,7 @@ Category Filtering
 
 ---
 
-# 📱 Responsive
+#  Responsive
 
 Desktop
 
@@ -365,7 +365,7 @@ Mobile
 
 ---
 
-# 🔄 Git Workflow
+# Git Workflow
 
 Initial Commit
 
@@ -383,7 +383,7 @@ Production Deployment
 
 ---
 
-# 📈 Future Improvements
+# Future Improvements
 
 Firebase Authentication
 
@@ -401,7 +401,7 @@ Dark Mode
 
 ---
 
-# 👩‍💻 Developed By
+# Developed By
 
 Nadia Nisar
 
@@ -415,6 +415,6 @@ WordPress Developer
 
 ---
 
-# 📄 License
+# License
 
 This project is created for learning, portfolio, and interview purposes.
