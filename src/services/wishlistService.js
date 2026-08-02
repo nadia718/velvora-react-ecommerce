@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/wishlist";
+const API_URL = "https://velvora-react-ecommerce-production.up.railway.app/wishlist";
 
 
 export async function getWishlist() {

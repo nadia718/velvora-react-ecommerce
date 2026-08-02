@@ -1,7 +1,10 @@
 import { toast } from "react-toastify";
+
+const API_URL = "https://velvora-react-ecommerce-production.up.railway.app";
+
 export async function loginUser(email, password) {
     try {
-        const response = await fetch("http://localhost:3000/users");
+        const response = await fetch(`${API_URL}/users`);
 
         const users = await response.json();
 
@@ -32,12 +35,11 @@ export async function loginUser(email, password) {
     }
 }
 
-
 export async function registerUser(userData) {
     try {
 
         // Pehle saare users lao
-        const response = await fetch("http://localhost:3000/users");
+        const response = await fetch(`${API_URL}/users`);
         const users = await response.json();
 
         // Check karo email already exist karti hai ya nahi
@@ -55,7 +57,7 @@ export async function registerUser(userData) {
         }
 
         // Naya user database me save karo
-        const registerResponse = await fetch("http://localhost:3000/users", {
+        const registerResponse = await fetch(`${API_URL}/users`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -81,12 +83,11 @@ export async function registerUser(userData) {
     }
 }
 
-
 export async function getUser(currentUser_id) {
     try {
 
         const response = await fetch(
-            `http://localhost:3000/users/${currentUser_id}`
+            `${API_URL}/users/${currentUser_id}`
         );
 
         const user = await response.json();
@@ -106,13 +107,11 @@ export async function getUser(currentUser_id) {
     }
 }
 
-
-
 export async function updateUser(id, userData) {
     try {
 
         const response = await fetch(
-            `http://localhost:3000/users/${id}`,
+            `${API_URL}/users/${id}`,
             {
                 method: "PUT",
                 headers: {

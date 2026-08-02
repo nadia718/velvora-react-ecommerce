@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/orders";
+const API_URL = "https://velvora-react-ecommerce-production.up.railway.app/orders";
 
 export async function createOrder(orderData) {
     try {
