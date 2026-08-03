@@ -299,9 +299,13 @@ function Navbar() {
                                     New Arrivals
                                 </Link>
 
-                                <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                                <HashLink smooth to="/#contact" onClick={() => setMenuOpen(false)}>
                                     Contact
-                                </Link>
+                                </HashLink>
+
+                                {/* <Link to="/contact" onClick={() => setMenuOpen(false)}>
+                                    Contact
+                                </Link> */}
 
                                 <div className="pt-5 border-t">
 
