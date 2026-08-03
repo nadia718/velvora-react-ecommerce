@@ -263,15 +263,19 @@ function Navbar() {
                             )}
                         </Link>
 
-                        {/* Mobile Menu Button */}
-                        <button
-                            className="lg:hidden text-2xl"
-                            onClick={() => setMenuOpen(!menuOpen)}
-                        >
-                            {menuOpen ? <FaTimes /> : <FaBars />}
-                        </button>
+
 
                     </div>
+
+
+                    {/* Mobile Menu Button */}
+                    <button
+                        className="lg:hidden text-2xl"
+                        onClick={() => setMenuOpen(!menuOpen)}
+                    >
+                        {menuOpen ? <FaTimes /> : <FaBars />}
+                    </button>
+
 
                     {/* Mobile Menu */}
                     {menuOpen && (
@@ -299,42 +303,165 @@ function Navbar() {
                                     Contact
                                 </Link>
 
-                                <div className="flex items-center gap-4 pt-5 border-t">
+                                <div className="pt-5 border-t">
 
-                                    <Link
-                                        to="/wishlist"
-                                        onClick={() => setMenuOpen(false)}
-                                        className="relative bg-[#F8F4EF] p-3 rounded-full hover:bg-[#C8A97E] hover:text-white duration-300"
-                                    >
-                                        <FaHeart />
+                                    {!user ? (
+                                        <>
+                                            <Link
+                                                to="/login"
+                                                onClick={() => setMenuOpen(false)}
+                                                className="block py-2 hover:text-[#C8A97E]"
+                                            >
+                                                Login
+                                            </Link>
 
-                                        {wishlist.length > 0 && (
-                                            <span className="absolute -top-1 -right-1 bg-[#C8A97E] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
-                                                {wishlist.length}
-                                            </span>
-                                        )}
-                                    </Link>
+                                            <Link
+                                                to="/register"
+                                                onClick={() => setMenuOpen(false)}
+                                                className="block py-2 hover:text-[#C8A97E]"
+                                            >
+                                                Register
+                                            </Link>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <Link
+                                                to="/profile"
+                                                onClick={() => setMenuOpen(false)}
+                                                className="block py-2 hover:text-[#C8A97E]"
+                                            >
+                                                My Profile
+                                            </Link>
 
-                                    <button className="bg-[#F8F4EF] p-3 rounded-full hover:bg-[#C8A97E] hover:text-white duration-300">
-                                        <FaUser />
-                                    </button>
+                                            <Link
+                                                to="/orders"
+                                                onClick={() => setMenuOpen(false)}
+                                                className="block py-2 hover:text-[#C8A97E]"
+                                            >
+                                                My Orders
+                                            </Link>
 
-                                    <Link
-                                        to="/cart"
-                                        onClick={() => setMenuOpen(false)}
-                                        className="relative bg-[#F8F4EF] p-3 rounded-full hover:bg-[#C8A97E] hover:text-white duration-300"
-                                    >
-                                        <FaShoppingCart />
+                                            <button
+                                                onClick={() => {
+                                                    handleLogout();
+                                                    setMenuOpen(false);
+                                                }}
+                                                className="block py-2 text-red-500"
+                                            >
+                                                Logout
+                                            </button>
+                                        </>
+                                    )}
 
-                                        {cart.length > 0 && (
-                                            <span className="absolute -top-1 -right-1 bg-[#C8A97E] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
-                                                {cart.length}
-                                            </span>
-                                        )}
-                                    </Link>
+                                    <div className="flex items-center gap-4 pt-4 border-t mt-4">
+
+                                        <Link
+                                            to="/wishlist"
+                                            onClick={() => setMenuOpen(false)}
+                                            className="relative bg-[#F8F4EF] p-3 rounded-full hover:bg-[#C8A97E] hover:text-white duration-300"
+                                        >
+                                            <FaHeart />
+                                            {wishlist.length > 0 && (
+                                                <span className="absolute -top-1 -right-1 bg-[#C8A97E] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
+                                                    {wishlist.length}
+                                                </span>
+                                            )}
+                                        </Link>
+
+                                        <Link
+                                            to="/cart"
+                                            onClick={() => setMenuOpen(false)}
+                                            className="relative bg-[#F8F4EF] p-3 rounded-full hover:bg-[#C8A97E] hover:text-white duration-300"
+                                        >
+                                            <FaShoppingCart />
+                                            {cart.length > 0 && (
+                                                <span className="absolute -top-1 -right-1 bg-[#C8A97E] text-white text-[10px] w-5 h-5 rounded-full flex items-center justify-center">
+                                                    {cart.length}
+                                                </span>
+                                            )}
+                                        </Link>
+
+                                        <div className="relative">
+
+                                            <button
+                                                onClick={() => setShowProfileMenu(!showProfileMenu)}
+                                                className="bg-[#F8F4EF] p-3 rounded-full hover:bg-[#C8A97E] hover:text-white duration-300"
+                                            >
+                                                <FaUser />
+                                            </button>
+
+                                            {showProfileMenu && (
+                                                <div className="absolute top-14 left-1/2 -translate-x-1/2 w-44 bg-white shadow-xl rounded-xl border z-50">
+
+                                                    {user ? (
+                                                        <>
+                                                            <Link
+                                                                to="/profile"
+                                                                onClick={() => {
+                                                                    setShowProfileMenu(false);
+                                                                    setMenuOpen(false);
+                                                                }}
+                                                                className="block px-4 py-3 hover:bg-gray-100"
+                                                            >
+                                                                My Profile
+                                                            </Link>
+
+                                                            <Link
+                                                                to="/orders"
+                                                                onClick={() => {
+                                                                    setShowProfileMenu(false);
+                                                                    setMenuOpen(false);
+                                                                }}
+                                                                className="block px-4 py-3 hover:bg-gray-100"
+                                                            >
+                                                                My Orders
+                                                            </Link>
+
+                                                            <button
+                                                                onClick={() => {
+                                                                    handleLogout();
+                                                                    setShowProfileMenu(false);
+                                                                    setMenuOpen(false);
+                                                                }}
+                                                                className="w-full text-left px-4 py-3 text-red-500 hover:bg-gray-100"
+                                                            >
+                                                                Logout
+                                                            </button>
+                                                        </>
+                                                    ) : (
+                                                        <>
+                                                            <Link
+                                                                to="/login"
+                                                                onClick={() => {
+                                                                    setShowProfileMenu(false);
+                                                                    setMenuOpen(false);
+                                                                }}
+                                                                className="block px-4 py-3 hover:bg-gray-100"
+                                                            >
+                                                                Login
+                                                            </Link>
+
+                                                            <Link
+                                                                to="/register"
+                                                                onClick={() => {
+                                                                    setShowProfileMenu(false);
+                                                                    setMenuOpen(false);
+                                                                }}
+                                                                className="block px-4 py-3 hover:bg-gray-100"
+                                                            >
+                                                                Register
+                                                            </Link>
+                                                        </>
+                                                    )}
+
+                                                </div>
+                                            )}
+
+                                        </div>
+
+                                    </div>
 
                                 </div>
-
                             </div>
 
                         </div>
